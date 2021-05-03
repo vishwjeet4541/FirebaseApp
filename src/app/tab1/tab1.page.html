@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Employee Registration
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label position="floating"> First Name</ion-label>
+    <ion-input   [(ngModel)]="F_Name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating"> Last Name</ion-label>
+    <ion-input  [(ngModel)]="L_Name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Phone Number</ion-label>
+    <ion-input  [(ngModel)]="phone"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Address</ion-label>
+    <ion-input  [(ngModel)]="Address"></ion-input>
+     </ion-item>
+     <ion-button expand="full"  (click)="save()" >Save Data</ion-button>
+     <ion-card  *ngFor="let i of List ; let j = index;">
+      <ion-card-header>
+        <ion-card-title style="color: lightseagreen;"> {{i.FName}} {{i.LName}}</ion-card-title>
+        <ion-card-subtitle> {{i.phone}}</ion-card-subtitle>
+
+      </ion-card-header>
+     
+      <ion-card-content>
+        <ion-item>
+          <ion-icon name="home-outline"></ion-icon>
+          <ion-label style="padding-left: 14%;">{{i.Address}}</ion-label>
+          <ion-button fill="outline" slot="end" (click)="delete(j)">Delete</ion-button>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+</ion-content>

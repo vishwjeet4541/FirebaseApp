@@ -1,0 +1,7 @@
+{
+  "name": "TGCfirebase",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
